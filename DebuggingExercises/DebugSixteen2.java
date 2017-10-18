@@ -14,7 +14,7 @@ public class DebugSixteen2 extends JPanel implements MouseListener
 
    public DebugSixteen2()
    {
-      addMouseListener();
+      addMouseListener(this);
    }
    public static void main(String[] args)
    {
@@ -29,14 +29,14 @@ public class DebugSixteen2 extends JPanel implements MouseListener
    public void mousePressed(MouseEvent e)
    {
       x = e.getX();
-      y = e.gety();
+      y = e.getY();
    }
 
    @Override
    public void mouseClicked(MouseEvent e)
    {
       if(e.getClickCount() == 2)
-        size = 20;
+        size = 10;
       else
         size = 20;
      repaint();
@@ -49,6 +49,7 @@ public class DebugSixteen2 extends JPanel implements MouseListener
    @Override
    public void mouseExited(MouseEvent e)
    {
+       setBackground(Color.white);
    }
    @Override
    public void mouseReleased(MouseEvent e)
